@@ -76,7 +76,7 @@ class Optimal_Stop(gym.Env):
 
     def step(self, action):
         action = np.clip(action, self.min_acceleration, self.max_acceleration)
-        position, distance, speed = self.state
+        position, distance, speed, leader_speed = self.state
         speed += action
         speed = np.clip(speed, self.min_speed, self.max_speed)
         position += speed
