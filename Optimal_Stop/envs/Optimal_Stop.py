@@ -59,7 +59,7 @@ class Optimal_Stop(gym.Env):
         self.max_speed = 20
         self.min_speed = 0
         self.max_acceleration = 6
-        self.min_acceleration = -1
+        self.min_acceleration = -0.5
         self.goal_position = 1800
         self.low = np.array([self.min_position, self.min_distance, self.min_speed, self.min_speed])
         self.high = np.array([self.max_position, self.max_distance, self.max_speed, self.max_speed])
@@ -90,7 +90,7 @@ class Optimal_Stop(gym.Env):
         done = bool(position >= self.goal_position)
         if crash:
             print('Car Crash!')
-            reward = -120.0
+            reward = -1000.0
             done = True
         self.state = (position, distance, speed, self.driver_speed)
         return np.array(self.state), reward, done, {}
