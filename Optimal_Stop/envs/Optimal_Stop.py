@@ -92,7 +92,7 @@ class Optimal_Stop(gym.Env):
             print('Car Crash!')
             reward = -100.0
             done = True
-        self.state = (position, distance, speed)
+        self.state = (position, distance, speed, self.driver_speed)
         return np.array(self.state), reward, done, {}
 
     def reset(self):
@@ -105,8 +105,8 @@ class Optimal_Stop(gym.Env):
             #self.stop_position = np.random.uniform(1000,4*10**3) # random stop position
         else:
             self.stop_position = 3*self.goal_position
-        self.state = np.array([0, 100, 6]) # postion, distance, speed
         self.driver_speed = 18
+        self.state = np.array([0, 100, 6, self.driver_speed]) # postion, distance, speed, Leaders speed
         self.driver_position = 100
         self.stop_ticker = 0
         #Reset Sprites and speed before next rollout
