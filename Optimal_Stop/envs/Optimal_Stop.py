@@ -102,7 +102,7 @@ class Optimal_Stop(gym.Env):
         if self.random_stop:
             self.stop_position = 1779 # right before end stop position
             #self.stop_position = np.random.uniform(1000,4*10**3) # random stop position
-			print('Stop.... In the name of love, before you break my head!')
+            print('Stop.... In the name of love, before you break my head!')
         else:
             self.stop_position = 3*self.goal_position
         self.driver_speed = 18

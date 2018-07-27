@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(name='Optimal_Stop',
       version='0.0.1',
-      install_requires=['gym==0.7.4',
+      install_requires=['gym==0.10.5',
                         'pygame',
                         'numpy'],
       description='Open AI Gym environment to test risk averse algorithms',
