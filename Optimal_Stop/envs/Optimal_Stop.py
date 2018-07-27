@@ -99,8 +99,8 @@ class Optimal_Stop(gym.Env):
         "state = position, distance, speed"
         self.random_number = np.random.uniform()
         self.random_stop = bool(self.random_number < self.stop_prob)
-        print('stop T/F', self.random_stop)
         if self.random_stop:
+            print('stop True)
             self.stop_position = 1779 # right before end stop position
             #self.stop_position = np.random.uniform(1000,4*10**3) # random stop position
         else:
